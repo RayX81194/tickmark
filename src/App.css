@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* App.css */
+
+/* Custom checkbox styles */
+.checkbox-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.checkbox-wrapper input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-custom {
+  position: absolute;
+  cursor: pointer;
+  bottom:1px;
+  height: 24px;
+  width: 24px;
+  border: 2px solid #facc15; /* Yellow border */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-custom::after {
+  content: '';
+  position: absolute;
+  display: none;
+  width: 8px;
+  height: 16px;
+  border: solid #facc15; /* Yellow checkmark */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-wrapper input:checked ~ .checkbox-custom::after {
+  display: block;
+}
